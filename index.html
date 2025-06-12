@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Energética Requena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <h1>Comunidad Energética Renovable Requena</h1>
+            <p>Energía limpia y local para todos</p>
+        </div>
+    </header>
+
+    <!-- Sección Hero con Junta -->
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="junta-convocatoria">
+            <h2>Próxima Junta General</h2>
+            <div class="fecha-junta">
+                <p id="fecha">30 de Noviembre de 2023</p>
+            </div>
+            <div class="detalles-junta">
+                <p><strong>Hora:</strong> 18:00h</p>
+                <p><strong>Lugar:</strong> Centro Cultural Requena</p>
+                <p><strong>Tema:</strong> Nuevos proyectos solares y subvenciones.</p>
+            </div>
+            <form action="https://formsubmit.co/garciaroigcarlos@gmail.com" method="POST" id="formConfirmacion"
+                class="formulario-asistencia">
+                <!-- Añade un campo oculto para el asunto -->
+                <input type="hidden" name="_subject" value="Confirmación de Asistencia a Junta">
+                <!-- Oculta el captcha -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirección tras enviar (opcional) -->
+                <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+
+                <div class="campo-formulario">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="campo-formulario">
+                    <label for="numeroSocio">Número de socio:</label>
+                    <input type="text" id="numeroSocio" name="numeroSocio" required>
+                </div>
+                <button type="submit" class="btn-contacto">Confirmar Asistencia</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2023 Comunidad Energética Renovable Requena</p>
+            <p>Contacto: <a href="mailto:requenarenovable@gmail.com">requenarenovable@gmail.com</a></p>
+            <!-- <div class="redes-sociales"> -->
+                <!-- <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a> -->
+                <!-- <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a> -->
+            <!-- </div> -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
