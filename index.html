@@ -6,62 +6,139 @@
     <title>Comunidad Energética Requena</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header con navegación -->
     <header class="main-header">
         <div class="container">
-            <h1>Comunidad Energética Renovable Requena</h1>
-            <p>Energía limpia y local para todos</p>
+            <div class="header-content">
+            <div class="logo">
+                <img src="img/RRCV_v3.png" alt="Logo Comunidad Energética Requena" class="logo-img">
+                <div class="logo-text">
+                    <h1>Comunidad Energética Renovable Requena</h1>
+                    <p>Energía limpia y local para todos</p>
+                </div>
+            </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#junta">Próxima Junta</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Sección Hero con Junta -->
-<section class="hero">
-    <div class="hero-overlay">
-        <div class="junta-convocatoria">
-            <h2>Próxima Junta General</h2>
-            <div class="fecha-junta">
-                <p id="fecha">30 de Noviembre de 2023</p>
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>Energía renovable para Requena</h2>
+                <p>Únete a nuestra comunidad energética local y sostenible</p>
+                <a href="#junta" class="btn-hero">Participa en la próxima junta</a>
             </div>
-            <div class="detalles-junta">
-                <p><strong>Hora:</strong> 18:00h</p>
-                <p><strong>Lugar:</strong> Centro Cultural Requena</p>
-                <p><strong>Tema:</strong> Nuevos proyectos solares y subvenciones.</p>
-            </div>
-            <form action="https://formsubmit.co/requenarenovable@gmail.com" method="POST" id="formConfirmacion"
-                class="formulario-asistencia">
-                <!-- Añade un campo oculto para el asunto -->
-                <input type="hidden" name="_subject" value="Confirmación de Asistencia a Junta">
-                <!-- Oculta el captcha -->
-                <input type="hidden" name="_captcha" value="false">
-                <!-- Redirección tras enviar (opcional) -->
-                <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
-
-                <div class="campo-formulario">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div class="campo-formulario">
-                    <label for="numeroSocio">Número de socio:</label>
-                    <input type="text" id="numeroSocio" name="numeroSocio" required>
-                </div>
-                <button type="submit" class="btn-contacto">Confirmar Asistencia</button>
-            </form>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Sección Galería -->
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2>Instalacion Fotovoltaica - Fase I</h2>
+            <div class="galeria-container">
+                <div class="galeria-slider">
+                    <div class="slide active">
+                        <img src="img/inst1.jpg" alt="Instalación solar 1">
+                        <div class="slide-caption">Vista 1</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/inst2.jpg" alt="Instalación solar 2">
+                        <div class="slide-caption">Vista 2</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/inst3.jpg" alt="Instalación solar 3">
+                        <div class="slide-caption">Vista 3</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/inst4.jpg" alt="Instalación solar 4">
+                        <div class="slide-caption">Vista 4</div>
+                    </div>
+                </div>
+                <div class="galeria-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Junta -->
+    <section class="junta-section" id="junta">
+        <div class="container">
+            <div class="junta-convocatoria">
+                <h2>Próxima Junta General</h2>
+                <div class="fecha-junta">
+                    <p id="fecha">30 de Noviembre de 2023</p>
+                </div>
+                <div class="detalles-junta">
+                    <p><strong>Hora:</strong> 19:30h</p>
+                    <p><strong>Lugar:</strong> Sala Yeves - Edificio del Mercado</p>
+                    <!-- <p><strong>Tema:</strong> </p> -->
+                </div>
+                <form action="https://formsubmit.co/requenarenovable@gmail.com" method="POST" id="formConfirmacion"
+                    class="formulario-asistencia">
+                    <input type="hidden" name="_subject" value="Confirmación de Asistencia a Junta">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://requenarenovable.github.io/form_sended.html">
+
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <button type="submit" class="btn-contacto">Confirmar Asistencia</button>
+                </form>
+
+                <div class="pdf-convocatoria">
+                    <a href="https://1drv.ms/b/c/be75ad23125c5685/ESNXit657i5Hgmnpo7qy09MBQ5PkJufo7UYbG8rW-9WTTg?e=5F6aSW" target="_blank"
+                        class="btn-pdf">
+                        <i class="fas fa-file-pdf"></i> Ver detalle convocatoria
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer" id="contacto">
         <div class="container">
-            <p>© 2023 Comunidad Energética Renovable Requena</p>
-            <p>Contacto: <a href="mailto:requenarenovable@gmail.com">requenarenovable@gmail.com</a></p>
-            <!-- <div class="redes-sociales"> -->
-                <!-- <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a> -->
-                <!-- <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a> -->
-            <!-- </div> -->
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Comunidad Energética Renovable Requena</h3>
+                    <p>Promoviendo energía limpia y local para todos los vecinos de Requena</p>
+                </div>
+                <div class="footer-contacto">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:requenarenovable@gmail.com">requenarenovable@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>© 2024 Comunidad Energética Renovable Requena</p>
+            </div>
         </div>
     </footer>
 

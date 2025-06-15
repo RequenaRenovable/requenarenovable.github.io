@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias por confirmar | Comunidad Energética Requena</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="confirmacion-container">
+        <div class="confirmacion-box">
+            <i class="fas fa-check-circle confirmacion-icono"></i>
+            <h1>¡Gracias por confirmar!</h1>
+            <p>Hemos recibido tu confirmación de asistencia a la próxima junta.</p>
+            <a href="index.html" class="btn-volver">Volver al inicio</a>
+            
+            <div class="pdf-convocatoria">
+                <a href="https://onedrive.live.com/view.aspx?resid=TU_ID_DE_ARCHIVO&authkey=!TU_CLAVE_DE_ACCESO" 
+                   target="_blank" 
+                   class="btn-pdf">
+                    <i class="fas fa-file-pdf"></i> Ver Convocatoria en PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar la misma fecha que en la página principal
+        document.addEventListener('DOMContentLoaded', function() {
+            const proximaJunta = new Date('2023-12-15T18:00:00');
+            const opciones = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                timeZone: 'Europe/Madrid'
+            };
+            
+            document.getElementById('fecha-junta').textContent = 
+                proximaJunta.toLocaleDateString('es-ES', opciones);
+        });
+    </script>
+</body>
+</html>
