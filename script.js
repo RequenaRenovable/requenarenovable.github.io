@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Configura la próxima fecha aquí
-    const proximaJunta = new Date('2023-06-30T19:30:00');
+    const proximaJunta = new Date('2025-09-26T19:30:00');
     const opciones = { 
         weekday: 'long', 
         year: 'numeric', 
