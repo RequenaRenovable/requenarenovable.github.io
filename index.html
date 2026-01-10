@@ -50,7 +50,7 @@
     <section class="galeria" id="galeria">
         <div class="container">
             <h2>Instalación Fotovoltaica - Fase I</h2>
-            <div class="galeria-container">
+            <div class="galeria-container" id="galeria-fase1">
                 <div class="galeria-slider">
                     <div class="slide active">
                         <img src="img/inst1.jpg" alt="Instalación solar 1">
@@ -83,25 +83,58 @@
         </div>
     </section>
 
-    <!-- Sección Junta -->
-    <section class="junta-section" id="junta">
+    <!-- Sección Galería Fase II -->
+    <section class="galeria galeria-fase2">
         <div class="container">
-            <div class="junta-convocatoria">
-                <h2>Próxima Junta General</h2>
-                <div class="fecha-junta">
-                    <p id="fecha">26 de Septiembre de 2025</p>
+            <h2>Instalación Fotovoltaica - Fase II</h2>
+            <div class="galeria-container" id="galeria-fase2">
+                <div class="galeria-slider">
+                    <div class="slide active">
+                        <img src="img/fase2/1.jpg" alt="Instalación solar Fase 2 - 1">
+                        <div class="slide-caption">Vista 1</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/fase2/2.jpg" alt="Instalación solar Fase 2 - 2">
+                        <div class="slide-caption">Vista 2</div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/fase2/3.jpg" alt="Instalación solar Fase 2 - 3">
+                        <div class="slide-caption">Vista 3</div>
+                    </div>
                 </div>
-                <div class="detalles-junta">
-                    <p><strong>Hora:</strong> 19:30h</p>
-                    <p><strong>Lugar:</strong> Sala Yeves - Edificio del Mercado</p>
-                    <!-- <p><strong>Tema:</strong> </p> -->
+                <div class="galeria-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <form action="https://formsubmit.co/requenarenovable@gmail.com" method="POST" id="formConfirmacion"
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Junta -->
+    <!--
+        <section class="junta-section" id="junta">
+            <div class="container">
+                <div class="junta-convocatoria">
+                    <h2>Próxima Junta General</h2>
+                    <div class="fecha-junta">
+                        <p id="fecha">26 de Septiembre de 2025</p>
+                    </div>
+                    <div class="detalles-junta">
+                        <p><strong>Hora:</strong> 19:30h</p>
+                        <p><strong>Lugar:</strong> Sala Yeves - Edificio del Mercado</p>
+                    </div>
+                    <form action="https://formsubmit.co/requenarenovable@gmail.com" method="POST" id="formConfirmacion"
                     class="formulario-asistencia">
                     <input type="hidden" name="_subject" value="Confirmación de Asistencia a Junta">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://requenarenovable.github.io/form_sended.html">
-
+                    
                     <div class="campo-formulario">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
@@ -112,16 +145,17 @@
                     </div>
                     <button type="submit" class="btn-contacto">Confirmar Asistencia</button>
                 </form>
-
+                
                 <div class="pdf-convocatoria">
                     <a href="https://1drv.ms/b/c/be75ad23125c5685/Ee6iJbb3QFdAjQ3T5h4t_3MBqufETdDkymQlb4bYBSrtCQ?e=4Zyf0A" target="_blank"
-                        class="btn-pdf">
-                        <i class="fas fa-file-pdf"></i> Ver detalle convocatoria
-                    </a>
-                </div>
+                    class="btn-pdf">
+                    <i class="fas fa-file-pdf"></i> Ver detalle convocatoria
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    -->
 
     <!-- Footer -->
     <footer class="main-footer" id="contacto">
@@ -134,6 +168,17 @@
                 <div class="footer-contacto">
                     <h3>Contacto</h3>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:requenarenovable@gmail.com">requenarenovable@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-document">
+                <h3>Documentación</h3>
+                <div class="onedrive-embed">
+                    <iframe src="https://1drv.ms/b/c/66de7ae812273d25/IQDzcgD1QjxkSLUyTwKv9PuZARNC-G_C8z7rYxfc5sjHaJ4?e=WfoBq4" 
+                            width="100%" 
+                            height="400" 
+                            frameborder="0" 
+                            scrolling="no">
+                    </iframe>
                 </div>
             </div>
             <div class="footer-copy">

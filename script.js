@@ -12,51 +12,60 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('fecha').textContent = 
         proximaJunta.toLocaleDateString('es-ES', opciones);
 
-    // Galería de fotos
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentSlide = 0;
+    // Galería de fotos - Función genérica para inicializar carruseles
+    function initCarousel(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
 
-    function showSlide(n) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
+        const slides = container.querySelectorAll('.slide');
+        const dots = container.querySelectorAll('.dot');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        let currentSlide = 0;
+        let slideInterval;
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
 
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
         });
-    });
 
-    // Autoavance de la galería
-    let slideInterval = setInterval(nextSlide, 10000);
-
-    // Pausar autoavance al interactuar
-    const galeriaContainer = document.querySelector('.galeria-container');
-    galeriaContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-
-    galeriaContainer.addEventListener('mouseleave', () => {
+        // Autoavance de la galería
         slideInterval = setInterval(nextSlide, 10000);
-    });
+
+        // Pausar autoavance al interactuar
+        container.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        container.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 10000);
+        });
+    }
+
+    // Inicializar ambos carruseles
+    initCarousel('galeria-fase1');
+    initCarousel('galeria-fase2');
 
     // Menú hamburguesa para móviles
     const hamburger = document.querySelector('.hamburger');
