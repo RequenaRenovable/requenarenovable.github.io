@@ -1,26 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Configura la próxima fecha aquí
-    const proximaJunta = new Date('2025-09-26T19:30:00');
-    const opciones = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric',
-        timeZone: 'Europe/Madrid'
-    };
-    
-    document.getElementById('fecha').textContent = 
-        proximaJunta.toLocaleDateString('es-ES', opciones);
+    // Configura la próxima fecha aquí (solo si existe el elemento)
+    const fechaElement = document.getElementById('fecha');
+    if (fechaElement) {
+        const proximaJunta = new Date('2025-09-26T19:30:00');
+        const opciones = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            timeZone: 'Europe/Madrid'
+        };
+        fechaElement.textContent = proximaJunta.toLocaleDateString('es-ES', opciones);
+    }
 
     // Galería de fotos - Función genérica para inicializar carruseles
     function initCarousel(containerId) {
         const container = document.getElementById(containerId);
-        if (!container) return;
+        if (!container) {
+            console.log('Contenedor no encontrado:', containerId);
+            return;
+        }
 
         const slides = container.querySelectorAll('.slide');
         const dots = container.querySelectorAll('.dot');
         const prevBtn = container.querySelector('.prev-btn');
         const nextBtn = container.querySelector('.next-btn');
+        
+        if (!prevBtn || !nextBtn || slides.length === 0) {
+            console.log('Elementos faltantes en:', containerId);
+            return;
+        }
+
         let currentSlide = 0;
         let slideInterval;
 
@@ -30,7 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
         }
 
         function nextSlide() {
@@ -41,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
             showSlide(currentSlide - 1);
         }
 
-        nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
 
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
@@ -61,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
         container.addEventListener('mouseleave', () => {
             slideInterval = setInterval(nextSlide, 10000);
         });
+
+        console.log('Carrusel inicializado:', containerId);
     }
 
     // Inicializar ambos carruseles
