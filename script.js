@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configura la próxima fecha aquí (solo si existe el elemento)
     const fechaElement = document.getElementById('fecha');
     if (fechaElement) {
-        const proximaJunta = new Date('2025-09-26T19:30:00');
+        const proximaJunta = new Date('2026-06-29T19:30:00');
         const opciones = { 
             weekday: 'long', 
             year: 'numeric', 
